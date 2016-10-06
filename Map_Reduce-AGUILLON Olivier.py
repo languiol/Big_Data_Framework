@@ -1,6 +1,10 @@
+#Ce script décrit le plus simplement le processus du Map Réduce pour une phrase
+#Langage Py
+#Auteur Olivier
+
 import numpy as np
 
-
+# Definition de la fonction Map qui a pour role de decomposer les mots
 def map(a):
     
     #Découper les mot de la phrase et les ranger dans une matrice 1xn  
@@ -19,6 +23,7 @@ def map(a):
     return mapp
 
 
+# Definition de la fonction reduce qui compte le nombre des meme mot et qui met a jour le compteur
 def reduc(b):
     #Comptage des mots identiques dans la matrice
     doublon = np.unique(b, return_counts=True)
@@ -33,7 +38,7 @@ def reduc(b):
      #       if b[[i,:]]==b[[j,:]]:
                 
 
-
+# Definition de la fonction MAP REDUCE qui appelle les fonction map et reduc
 def map_red1(a):
     b=map(a)
     c=reduc(b)    
@@ -41,6 +46,8 @@ def map_red1(a):
 
 
 
+
+#POUR LE PLAISIR, une deuxieme fonction map reduce qui ne décompose pas en deux fonctions distinctes le map et le reduce
 def map_red2(a):
     
     #Découper les mots de la phrase et les ranger dans une matrice nx1  
