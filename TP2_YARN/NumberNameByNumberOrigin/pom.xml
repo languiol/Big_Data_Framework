@@ -8,10 +8,6 @@
     <artifactId>JAVA</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-    Configuration conf = new Configuration();
-    conf.addResource(new Path("your_hadoop_path/conf/core-site.xml"));
-    conf.addResource(new Path("your_hadoop_path/conf/hdfs-site.xml"));
-    FileSystem fs = FileSystem.get(URI.create(uri),conf);
 
     <packaging>jar</packaging>
     <dependencies>
